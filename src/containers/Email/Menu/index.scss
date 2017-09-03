@@ -1,0 +1,15 @@
+.content {
+  .pure-u {
+    ul {
+      margin-left: 0px;
+    }
+  }
+}
+
+.pure-menu-item {
+  .pure-menu-link {
+    &.active {
+      background: rgb(55, 60, 90);
+    }
+  }
+}

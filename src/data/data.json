@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "subject": "Subject",
+    "description": "Description...",
+    "from": {
+      "name": "Some Name",
+      "email": "some@email.com",
+      "avatarUrl": "https://source.unsplash.com/random/40x40"
+    },
+    "isImportant": true,
+    "status": 1,
+    "labels": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "subject": "Subject",
+    "description": "Description...",
+    "from": {
+      "name": "Some Name",
+      "email": "some@email.com",
+      "avatarUrl": "https://source.unsplash.com/random/40x40"
+    },
+    "isImportant": false,
+    "status": 1,
+    "labels": [
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "subject": "Subject",
+    "description": "Description...",
+    "from": {
+      "name": "Self Name",
+      "email": "self@email.com",
+      "avatarUrl": "https://source.unsplash.com/random/40x40"
+    },
+    "isImportant": true,
+    "status": 2,
+    "labels": [
+      3
+    ]
+  }
+]
