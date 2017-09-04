@@ -1,5 +1,8 @@
 import React from "react";
 import "./index.scss";
+import { Link } from "react-router";
+import JacketComponent from "./Jacket"
+import data from "./data.json"
 
 export default class JacketsAllContainer extends React.PureComponent {
     constructor(props) {
@@ -7,6 +10,7 @@ export default class JacketsAllContainer extends React.PureComponent {
     }
 
     render() {
+        const {children} = this.props
         return (
             <section>
             <nav className="product-filter">
@@ -42,107 +46,23 @@ export default class JacketsAllContainer extends React.PureComponent {
                     </div>
                 </div>
             </nav>
-
             <section className="products">
-                <div className="product-card">
-                    <div className="product-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                    <div className="product-info">
-                        <h5>Winter Jacket</h5>
-                        <h6>$99.99</h6>
-                    </div>
-                </div>
-
-                <div className="product-card">
-                    <div className="product-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                    <div className="product-info">
-                        <h5>Winter Jacket</h5>
-                        <h6>$99.99</h6>
-                    </div>
-                </div>
-
-                <div className="product-card">
-                    <div className="product-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                    <div className="product-info">
-                        <h5>Winter Jacket</h5>
-                        <h6>$99.99</h6>
-                    </div>
-                </div>
-
-                <div className="product-card">
-                    <div className="product-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                    </div>
-
-                    <div className="product-card">
-                        <div className="product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                    </div>
-
-                    <div className="product-card">
-                        <div className="product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                    </div>
-
-                    <div className="product-card">
-                        <div className="product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                    </div>
-
-                    <div className="product-card">
-                        <div className="product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                            <div className="product-info">
-                                <h5>Winter Jacket</h5>
-                                <h6>$99.99</h6>
-                            </div>
-                        </div>
-                        <div className="product-card">
-                            <div className="product-image">
-                                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                        </div>
-
-                        <div className="product-card">
-                            <div className="product-image">
-                                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
-			</div>
-                        <div className="product-info">
-                            <h5>Winter Jacket</h5>
-                            <h6>$99.99</h6>
-                        </div>
-                    </div>	
-            </section>
+            {
+                data.map(({ id, name, price, img, handleItemClick }, index) => (
+                      <div 
+                      key={id}
+                      className="product-card">
+                        <JacketComponent
+                            img={img}
+                            name={name}
+                            price={price}
+                          handleItemClick={handleItemClick}
+                        />
+                      </div>
+                    ))
+                  }       
+                  </section>
+            {children}
             </section>
                                                     )
 }

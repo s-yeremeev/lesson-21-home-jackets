@@ -14,7 +14,6 @@ export default () => ({
       "react"
     ],
     bundle: [
-      // "react-hot-loader/patch",
       "webpack-dev-server/client",
       "webpack/hot/only-dev-server",
       resolve(__dirname, "src/index.js")
