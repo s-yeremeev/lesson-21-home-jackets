@@ -1,23 +1,25 @@
 import React from "react"
 import "./index.scss"
+import { Link } from "react-router";
 
 export default ({
     id,
     name,
     price,
-    img,
-    handleItemClick
+    img
 }) => {
+    const link =`/jacket/${id}/`;
 
     return (
+        <Link to={link}>
         <div
-            onClick={() => handleItemClick(id)}
-            className="product-image">
+             className="product-image">
             <img src={img} />
             <div className="product-info">
                 <h5>{name}</h5>
                 <h6>{price}</h6>
             </div>
         </div>
+        </Link>
     )
 }
