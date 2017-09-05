@@ -5,4 +5,4 @@ import RootRouter from "./common/RootRouter"
 ReactDOM.render(
   <RootRouter />,
   document.getElementById("root")
-)
+);

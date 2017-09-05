@@ -2,70 +2,70 @@
   {
     "id": 1,
     "name": "Winter Jacket(2016-1)",
-    "price": "$99.99",
+    "price": 10.10,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "2016"
   },
   {
     "id": 2,
     "name": "Winter Jacket(2016-2)",
-    "price": "$99.99",
+    "price": 10.11,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "2016"
   },
   {
     "id": 3,
     "name": "Winter Jacket(jacket-1)",
-    "price": "$99.99",
+    "price": 55.00,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "jacket"
   },
   {
     "id": 4,
     "name": "Winter Jacket(jacket-2)",
-    "price": "$99.99",
+    "price": 70.54,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "jacket"
   },
   {
     "id": 5,
     "name": "Winter Jacket(jacket-3)",
-    "price": "$99.99",
+    "price": 5.02,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "jacket"
   },
   {
     "id": 6,
     "name": "Winter Jacket(jacket-4)",
-    "price": "$99.99",
+    "price": 22.05,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "jacket"
   },
   {
     "id": 7,
     "name": "Winter Jacket(Obermeyer-1)",
-    "price": "$99.99",
+    "price": 23.05,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "Obermeyer"
   },
   {
     "id": 8,
     "name": "Winter Jacket(Obermeyer-2)",
-    "price": "$99.99",
+    "price": 27.52,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "Obermeyer"
   },
   {
     "id": 9,
     "name": "Winter Jacket(Obermeyer-3)",
-    "price": "$99.99",
+    "price": 28.65,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "Obermeyer"
   },
   {
     "id": 10,
     "name": "Winter Jacket(Obermeyer-4)",
-    "price": "$99.99",
+    "price": 75.28,
     "img": "https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369",
     "filtered": "Obermeyer"
   }

@@ -7,84 +7,124 @@ export default class JacketsAllContainer extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            filters: null
+            filters: null,
+            sorting: null,
+            handler: null
         };
-    }
-    onchangeFilter = (event) => {        
-        const value = event.target.value
+    };
 
+    onchangeFilter = (event) => {
+        const filterValue = event.target.value
         this.setState({
-            filters: value
+            filters: filterValue,
         });
     };
 
-    
+    onchangeSort = (event) => {
+        const sortingValue = event.target.value
+        this.setState({
+            sorting: sortingValue
+        });
+    };
+
+     handlerclick = (event) => {
+        this.setState({
+            handler: event
+        });
+    };
+
+
     render() {
-        let filteredData;
+        let filteredData = data
         if (this.state.filters) {
-            filteredData = data.filter((item)=>{               
+            filteredData = data.filter((item) => {
                 return item.filtered == this.state.filters;
             });
         } else {
-            filteredData = data;
-        }      
+            filteredData = data
+        };
+        
+        if (this.state.handler) {
+            filteredData = data.filter((item) => {
+                return item.id == this.state.handler;
+            }); 
+        };
 
-        const {children} = this.props;
+        switch(this.state.sorting) {
+            case "low" :
+                filteredData.sort(function(a, b){
+                    let c = a.price, d = b.price;            
+                    if( c < d ) return -1;
+                    else if( c > d ) return 1;
+                    return 0;
+                });
+                break
+            case "high" :
+                    let sortArr = filteredData.sort(function(a, b){
+                        let c = a.price, d = b.price;            
+                        if( c > d ) return -1;
+                        else if( c < d ) return 1;
+                        return 0;
+                    });
+                break
+            case "" :
+                    filteredData.sort(function(a, b){
+                        let c = a.id, d = b.id;            
+                        if( c < d ) return -1;
+                        else if( c > d ) return 1;
+                        return 0;
+                    });
+             break
+        };
+
         return (
             <section>
-            <nav className="product-filter">
-                <h1>Jackets</h1>
+                <nav className="product-filter">
+                    <h1>Jackets</h1>
 
-                <div className="sort">
-                    <div className="collection-sort">
-                        <label>Filter by:</label>
-                        <select 
-                            onChange = {this.onchangeFilter}
-                        >
-                            <option value="">All Jackets</option>
-                            <option value="2016">2016</option>
-                            <option value="jacket">jacket</option>
-                            <option value="Jackets">Jackets</option>
-                            <option value="layers">layers</option>
-                            <option value="Obermeyer">Obermeyer</option>
-                            <option value="Roxy">Roxy</option>
-                            <option value="womens">womens</option>
-                        </select>
-                    </div>
+                    <div className="sort">
+                        <div className="collection-sort">
+                            <label>Filter by:</label>
+                            <select
+                                onChange={this.onchangeFilter}
+                            >
+                                <option value="">All Jackets</option>
+                                <option value="2016">2016</option>
+                                <option value="jacket">jacket</option>
+                                <option value="Obermeyer">Obermeyer</option>
+                            </select>
+                        </div>
 
-                    <div className="collection-sort">
-                        <label>Sort by:</label>
-                        <select>
-                            <option value="/">Featured</option>
-                            <option value="/">Best Selling</option>
-                            <option value="/">Alphabetically, A-Z</option>
-                            <option value="/">Alphabetically, Z-A</option>
-                            <option value="/">Price, low to high</option>
-                            <option value="/">Price, high to low</option>
-                            <option value="/">Date, new to old</option>
-                            <option value="/">Date, old to new</option>
-                        </select>
+                        <div className="collection-sort">
+                            <label>Sort by:</label>
+                            <select
+                                onChange={this.onchangeSort}
+                            >
+                                <option value="">Default</option>
+                                <option value="low">Price, low to high</option>
+                                <option value="high">Price, high to low</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-            </nav>
-            <section className="products">
-            {
-                filteredData.map(({ id, name, price, img }, index) => (
-                      <div 
-                      key={id}
-                      className="product-card">
-                        <JacketComponent
-                            id={id}
-                            img={img}
-                            name={name}
-                            price={price}
-                        />
-                      </div>
-                    ))
-                  }       
-                  </section>
-            {children}
+                </nav>
+                <section className="products">
+                    {
+                        filteredData.map(({ id, name, price, img, handlerclick }, index) => (
+                            <div
+                                key={id}
+                                className="product-card">
+                                <JacketComponent
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                    handlerclick={this.handlerclick}
+                                />
+                            </div>
+                        ))
+                    }
+                </section>
             </section>
-                                                    )
-}
+        )
+    }
 }

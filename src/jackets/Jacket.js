@@ -6,18 +6,20 @@ export default ({
     id,
     name,
     price,
-    img
+    img,
+    handlerclick
 }) => {
     const link =`/jacket/${id}/`;
 
     return (
-        <Link to={link}>
+        <Link to = {link}>
         <div
+            onClick = {() => handlerclick(id)} 
              className="product-image">
             <img src={img} />
             <div className="product-info">
                 <h5>{name}</h5>
-                <h6>{price}</h6>
+                <h4>{price}€</h4>
             </div>
         </div>
         </Link>

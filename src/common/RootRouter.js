@@ -9,7 +9,7 @@ export default class RootRouter extends React.PureComponent {
       <Router history={browserHistory}>
         <Route path="/">
           <Route path="/jackets" component={JacketsAllContainer}>
-          <Route path="/jacket/:jacket" component={JacketContainer} />
+            <Route path="/jacket/:jacketId" component={JacketContainer}/>
           </Route>
         </Route>
       </Router>
